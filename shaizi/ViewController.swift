@@ -9,17 +9,18 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+   
     @IBOutlet weak var dice1: UIImageView!
     
     @IBOutlet weak var dice2: UIImageView!
-    
-    
-    @IBAction func button(_ sender: UIButton) {
-        dice1.image = UIImage(named: "dice6")
-        dice2.image = UIImage(named: "dice6")
+    override func motionBegan(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        var random1 = Int.random (in:1...6)
+        var random2 = Int.random (in:1...6)
+        dice1.image = UIImage(named: "dice\(random1)")
+        dice2.image = UIImage(named: "dice\(random2)")
         
     }
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
